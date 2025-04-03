@@ -23,7 +23,7 @@ Follow these steps to clone the repository and run the project on your local mac
 
 1. **Clone the repository:**
    ```bash
-   git clone <repository_url>
+   git clone <https://github.com/winniepuhh/todo.git>
    ```
 
 2. **Navigate to the project directory:**
