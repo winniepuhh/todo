@@ -1,10 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import useTodos from '../../hooks/useTodos';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import Pagination from './components/Pagination';
+import useTodos from '../../hooks/useTodos';
+import { ToastContainer } from 'react-toastify';
+
 
 const Home: React.FC = () => {
   const {
@@ -45,13 +47,10 @@ const Home: React.FC = () => {
           </button>
         </div>
 
-        {error && (
-          <p className="text-red-500 text-center mb-4">{error}</p>
-        )}
+        <ToastContainer position="top-right" autoClose={3000} />
 
-        {isLoading && (
-          <p className="text-gray-600 text-center mb-4">Loading...</p>
-        )}
+        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+        {isLoading && <p className="text-gray-600 text-center mb-4">Loading...</p>}
 
         <TodoForm
           isOpen={openForm}

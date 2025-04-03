@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface TodoFormProps {
     isOpen: boolean;
@@ -11,7 +11,11 @@ interface TodoFormProps {
 const TodoForm: React.FC<TodoFormProps> = ({ isOpen, onClose, onAdd }) => {
     const [title, setTitle] = useState<string>('');
     const ref = useRef<HTMLInputElement>(null);
-    ref.current?.focus();
+
+
+    useEffect(() => {
+        if (isOpen && ref.current) ref.current.focus();
+    }, [isOpen]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
