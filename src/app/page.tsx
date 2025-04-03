@@ -4,7 +4,7 @@ import { useState } from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 import Pagination from './components/Pagination';
-import useTodos from '../../hooks/useTodos';
+import useTodos from '../hooks/useTodos';
 import { ToastContainer } from 'react-toastify';
 
 
